@@ -1,0 +1,37 @@
+<p-card header="Add user">
+
+
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="name">Name</label>
+      <input [(ngModel)]="name" id="name" type="text" style="margin-top: 10px" placeholder="eg: harsha" pInputText>
+    </div>
+
+
+  </div>
+
+  <div style="margin-top: 10px">
+  <button  pButton pRipple type="button" (click)="saveUser()"
+          label="Save" icon="pi pi-save" class="p-ml-4 hbtn p-button-success"></button>
+  </div>
+
+</p-card>
+
+<p-card header="List users">
+  <p-table [value]="users" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Delete</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{user.name}}</td>
+        <td><a href="javascript:void(0)" (click)="delete(user.id)">Delete </a></td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</p-card>
+
